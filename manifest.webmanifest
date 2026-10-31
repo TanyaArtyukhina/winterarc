@@ -1,0 +1,9 @@
+{
+  "name": "Winter Arc — 56 Days",
+  "short_name": "Winter Arc",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f2e8",
+  "theme_color": "#f4f2e8",
+  "description": "Personal 56-day habit and wellness tracker"
+}

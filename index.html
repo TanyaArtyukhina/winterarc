@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f2e8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Winter Arc">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Winter Arc · 56 days</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--bg:#f4f2e8;--paper:#fffef8;--sage:#dce4cd;--sage2:#b6c99a;--green:#25432e;--green2:#426448;--ink:#263329;--muted:#7c8478;--line:#e8e8dc;--rose:#e8c9bd;--gold:#e5d6a6;--shadow:0 10px 28px #34432b12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;padding-bottom:92px}
+button,input,select{font:inherit}button{cursor:pointer;border:0}.app{max-width:1120px;margin:auto;padding:22px 22px 30px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.mark{width:42px;height:42px;border-radius:15px;background:var(--green);color:#f5f4e8;display:grid;place-items:center;font-size:21px}.brand small{display:block;color:var(--muted);letter-spacing:.16em;font-size:9px;font-weight:700}.brand strong{font-family:'Playfair Display',serif;font-size:21px;letter-spacing:.02em}.date-pill{background:#e7eadc;padding:10px 14px;border-radius:30px;font-size:12px;color:var(--green);font-weight:700}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-bottom:16px}.hero-main{background:linear-gradient(125deg,#dce4cd,#eef0df 70%,#f7f4e8);border-radius:27px;padding:27px 28px;min-height:220px;position:relative;overflow:hidden;box-shadow:var(--shadow)}.eyebrow{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--green2);font-weight:700}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,43px);line-height:1.08;margin:13px 0 10px;max-width:430px}.hero p{font-size:13px;color:#5e6b5b;max-width:340px;line-height:1.6;margin:0}.hero-leaf{position:absolute;right:20px;bottom:-17px;font-size:115px;opacity:.2;transform:rotate(-20deg)}.hero-side{background:var(--green);color:#f7f5e9;border-radius:27px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}.hero-side .muted{color:#c6d1b9}.big-number{font-family:'Playfair Display',serif;font-size:49px;line-height:1;margin:10px 0 4px}.progress-track{height:8px;border-radius:9px;background:#ffffff2b;overflow:hidden;margin-top:14px}.progress-track span{display:block;height:100%;background:#c8d99e;border-radius:9px;width:0;transition:width .3s}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:var(--paper);border:1px solid #eeeee4;border-radius:23px;padding:20px;box-shadow:var(--shadow);min-width:0}.span-8{grid-column:span 8}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.span-12{grid-column:span 12}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.card h2{font-size:16px;margin:0;font-weight:700}.sub{font-size:11px;color:var(--muted)}.link-btn{background:transparent;color:var(--green2);font-size:11px;font-weight:700;padding:4px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#f2f3e9;border-radius:15px;padding:13px}.stat b{display:block;font-family:'Playfair Display',serif;font-size:22px}.stat span{font-size:10px;color:var(--muted)}
+.macro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.macro{background:#f3f4eb;padding:12px;border-radius:15px}.macro label{display:block;font-size:10px;color:var(--muted);margin-bottom:6px}.macro input{width:100%;border:0;background:transparent;outline:0;font-weight:700;font-size:19px;color:var(--ink);padding:0}.macro small{font-size:10px;color:var(--muted)}
+input,select{border:1px solid var(--line);border-radius:11px;padding:10px 11px;background:#fffef9;color:var(--ink);width:100%;outline-color:#9db183}input[type=checkbox]{width:18px;height:18px;accent-color:var(--green)}
+.water-controls{display:flex;align-items:center;gap:10px}.water-count{font-family:'Playfair Display',serif;font-size:28px}.round-btn{width:35px;height:35px;border-radius:50%;background:#e5eadb;color:var(--green);font-weight:700;font-size:19px}.water-glasses{display:flex;gap:5px;flex-wrap:wrap;margin-top:13px}.glass{width:18px;height:23px;border:1.5px solid #b7c7a4;border-radius:4px 4px 7px 7px;position:relative;overflow:hidden}.glass.full{background:#b6c99a}
+.habits{display:flex;flex-direction:column;gap:0}.habit{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.habit:last-child{border:0}.habit-icon{width:36px;height:36px;border-radius:13px;background:#edf1e4;display:grid;place-items:center;font-size:17px;flex:none}.habit-copy{flex:1;min-width:0}.habit-copy b{display:block;font-size:12px}.habit-copy small{font-size:10px;color:var(--muted)}.habit input{width:20px;height:20px}
+.field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.field label{display:block;font-size:10px;color:var(--muted);margin:0 0 5px 2px}.field.full{grid-column:1/-1}
+.primary{background:var(--green);color:white;border-radius:13px;padding:12px 16px;font-weight:700;font-size:12px}.secondary{background:#e9eddf;color:var(--green);border-radius:13px;padding:11px 14px;font-weight:700;font-size:12px}.danger{background:#f6e8e3;color:#8a5143}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.notice{background:#f3f1e5;border-radius:13px;padding:12px;font-size:11px;line-height:1.55;color:#6f7666}
+.nav{position:fixed;z-index:10;bottom:0;left:0;right:0;background:#fffef5ed;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;gap:6px;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}.nav button{background:transparent;color:#899084;padding:8px 13px;border-radius:13px;font-size:10px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:62px}.nav button.active{background:#e9eddf;color:var(--green)}.nav i{font-style:normal;font-size:18px}
+.page{display:none}.page.active{display:block}.hidden{display:none!important}
+.week-bars{display:flex;align-items:end;gap:8px;height:135px;padding-top:10px}.week-bar{flex:1;text-align:center;min-width:0}.week-bar div{background:#b8c99e;border-radius:8px 8px 3px 3px;min-height:4px}.week-bar small{font-size:9px;color:var(--muted);display:block;margin-top:7px}
+.measure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.measure-grid .field label{font-size:10px}
+.phase{padding:11px 13px;border-radius:13px;background:#f1eee2;font-size:11px;color:#686f60;line-height:1.5}
+.massage-svg{width:100%;max-height:330px;background:#f5f3e9;border-radius:16px}.massage-svg text{font-family:'DM Sans',sans-serif;fill:#4d634c;font-size:11px}
+.table{width:100%;border-collapse:collapse;font-size:11px}.table td,.table th{text-align:left;padding:10px 5px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:500}
+.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:var(--green);color:white;padding:11px 16px;border-radius:20px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:20}.toast.show{opacity:1}
+@media(max-width:720px){.app{padding:16px 13px 24px}.hero{grid-template-columns:1fr}.hero-main,.hero-side{min-height:185px}.span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}.card{padding:17px}.macro-grid{grid-template-columns:repeat(2,1fr)}.nav{justify-content:space-around}.nav button{min-width:0;padding:8px 10px}.stat-row{gap:6px}.stat{padding:10px}.stat b{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="mark">✳</div><div><small>YOUR 56-DAY RESET</small><strong>WINTER ARC</strong></div></div><div class="date-pill" id="datePill">DAY 01 / 56</div></header>
+
+<section class="page active" id="today">
+<div class="hero"><div class="hero-main"><div class="eyebrow">A softer kind of discipline</div><h1>Small habits,<br>big changes.</h1><p>Не идеальность каждый день, а последовательность. Сегодняшние маленькие действия складываются в большую перемену.</p><div class="hero-leaf">❧</div></div>
+<div class="hero-side"><div><div class="eyebrow" style="color:#c6d1b9">YOUR CONSISTENCY</div><div class="big-number" id="dayPercent">0%</div><div class="muted" style="font-size:11px">привычек выполнено сегодня</div></div><div><div class="progress-track"><span id="dayProgress"></span></div><div class="muted" style="font-size:10px;margin-top:8px" id="streakText">Начни свою серию сегодня</div></div></div></div>
+<div class="grid">
+<div class="card span-7"><div class="card-head"><div><h2>Today's nutrition</h2><div class="sub">Внеси фактические значения за день</div></div><span class="sub" id="calorieTarget">Цель — ккал</span></div><div class="macro-grid">
+<div class="macro"><label>Калории</label><input id="kcal" type="number" min="0" placeholder="0"><small id="kcalGoal">из — ккал</small></div>
+<div class="macro"><label>Белки, г</label><input id="protein" type="number" min="0" placeholder="0"><small id="proteinGoal">цель — г</small></div>
+<div class="macro"><label>Жиры, г</label><input id="fat" type="number" min="0" placeholder="0"><small id="fatGoal">цель — г</small></div>
+<div class="macro"><label>Углеводы, г</label><input id="carbs" type="number" min="0" placeholder="0"><small id="carbsGoal">цель — г</small></div>
+</div><div class="sub" style="margin-top:12px">Заполняй по мере приёмов пищи или вечером — данные сохраняются автоматически.</div></div>
+<div class="card span-5"><div class="card-head"><div><h2>Water balance</h2><div class="sub">Вода за сегодня</div></div><span>💧</span></div><div class="water-controls"><div><div class="water-count"><span id="waterNow">0</span><small style="font:12px 'DM Sans';color:var(--muted)"> / <span id="waterGoal">2400</span> мл</small></div><div class="sub">Ориентир, не жёсткое правило</div></div><button class="round-btn" id="waterMinus">−</button><button class="round-btn" id="waterPlus">+</button></div><div class="water-glasses" id="waterGlasses"></div></div>
+<div class="card span-7"><div class="card-head"><div><h2>Daily habits</h2><div class="sub">Твой ежедневный чек-лист</div></div><span class="sub" id="habitCount">0 / 6</span></div><div class="habits">
+<div class="habit"><div class="habit-icon">🧘🏻‍♀️</div><div class="habit-copy"><b>Yoga / mobility</b><small>30 минут · движение и осанка</small></div><input type="checkbox" data-habit="yoga"></div>
+<div class="habit"><div class="habit-icon">🌿</div><div class="habit-copy"><b>Hair tonic</b><small>Нанести тоник по инструкции</small></div><input type="checkbox" data-habit="hair"></div>
+<div class="habit"><div class="habit-icon">🪷</div><div class="habit-copy"><b>Body massage</b><small>Мягкий массаж / уход за кожей</small></div><input type="checkbox" data-habit="massage"></div>
+<div class="habit"><div class="habit-icon">🥗</div><div class="habit-copy"><b>Nutrition</b><small>Записать КБЖУ и придерживаться ориентира</small></div><input type="checkbox" data-habit="nutrition"></div>
+<div class="habit"><div class="habit-icon">💧</div><div class="habit-copy"><b>Hydration</b><small>Пить регулярно в течение дня</small></div><input type="checkbox" data-habit="water"></div>
+<div class="habit"><div class="habit-icon">🌙</div><div class="habit-copy"><b>Recovery</b><small>Сон и спокойное завершение дня</small></div><input type="checkbox" data-habit="recovery"></div>
+</div></div>
+<div class="card span-5"><div class="card-head"><div><h2>Movement tracker</h2><div class="sub">Внеси данные с Apple Watch</div></div><span>⌚</span></div><div class="field-grid">
+<div class="field"><label>Шаги</label><input id="steps" type="number" min="0" placeholder="Например, 4500"></div>
+<div class="field"><label>Активные ккал</label><input id="activeKcal" type="number" min="0" placeholder="С часов"></div>
+<div class="field full"><label>Минуты движения (необязательно)</label><input id="moveMinutes" type="number" min="0" placeholder="Минуты"></div></div><div class="notice" style="margin-top:13px">В холодный сезон шаги можно частично заменить домашней ходьбой, танцами или короткой mobility-сессией. Активные калории записываем для наблюдения, но не «доедаем» их автоматически.</div></div>
+<div class="card span-12"><div class="card-head"><div><h2>Cycle check-in</h2><div class="sub">Цикл помогает правильно читать изменения самочувствия и объёмов</div></div><button class="link-btn" onclick="showPage('profile')">Настроить →</button></div><div class="phase" id="cycleSummary">Добавь дату начала последней менструации в профиле — здесь появится ориентировочная фаза цикла.</div></div>
+</div>
+</section>
+
+<section class="page" id="progress">
+<div class="hero"><div class="hero-main"><div class="eyebrow">Your journey</div><h1>Progress,<br>not perfection.</h1><p>Отслеживаем тенденции, а не оцениваем отдельные дни. Объёмы, самочувствие и регулярность важнее случайных колебаний.</p></div><div class="hero-side"><div class="eyebrow" style="color:#c6d1b9">56-DAY JOURNEY</div><div class="big-number" id="progressDay">01</div><div class="muted">день твоего Winter Arc</div><div class="progress-track"><span id="overallProgress"></span></div><div class="muted" id="overallCaption" style="font-size:10px;margin-top:7px">0% пути пройдено</div></div></div>
+<div class="grid">
+<div class="card span-6"><div class="card-head"><div><h2>Weekly consistency</h2><div class="sub">Среднее выполнение привычек</div></div></div><div class="week-bars" id="weekBars"></div></div>
+<div class="card span-6"><div class="card-head"><div><h2>Body measurements</h2><div class="sub">Еженедельные замеры</div></div><button class="link-btn" onclick="showPage('checkin')">Добавить →</button></div><div class="stat-row"><div class="stat"><b id="waistStat">—</b><span>Талия, см</span></div><div class="stat"><b id="hipStat">—</b><span>Бёдра, см</span></div><div class="stat"><b id="weightStat">—</b><span>Вес, кг</span></div></div><div class="sub" style="margin-top:12px">Вес можно обновлять только тогда, когда удобно: старт, середина и финал.</div></div>
+<div class="card span-12"><div class="card-head"><div><h2>Check-in history</h2><div class="sub">Твои еженедельные записи</div></div></div><div id="historyWrap" class="sub">Пока нет замеров. Первый чек-ин можно сделать сегодня.</div></div>
+</div></section>
+
+<section class="page" id="checkin">
+<div class="card"><div class="card-head"><div><h2>Weekly review</h2><div class="sub">Один раз в неделю · выбери фактические значения</div></div><span>✧</span></div>
+<div class="notice" style="margin-bottom:16px">Старайся измерять обхваты в похожих условиях и примерно в одно время. Если сейчас предменструальная фаза или менструация, отметь это — небольшие колебания жидкости не означают набор жира.</div>
+<div class="field-grid">
+<div class="field"><label>Дата замера</label><input id="checkDate" type="date"></div>
+<div class="field"><label>Вес, кг (необязательно)</label><input id="checkWeight" type="number" step=".1" placeholder="Можно пропустить"></div>
+</div><h2 style="font-size:13px;margin:20px 0 12px">Обхваты, см</h2>
+<div class="measure-grid">
+<div class="field"><label>Грудь</label><input id="bust" type="number" step=".1" placeholder="—"></div>
+<div class="field"><label>Талия</label><input id="waist" type="number" step=".1" placeholder="—"></div>
+<div class="field"><label>Живот</label><input id="abdomen" type="number" step=".1" placeholder="—"></div>
+<div class="field"><label>Бёдра</label><input id="hips" type="number" step=".1" placeholder="—"></div>
+<div class="field"><label>Бедро (правое)</label><input id="thigh" type="number" step=".1" placeholder="—"></div>
+<div class="field"><label>Рука</label><input id="arm" type="number" step=".1" placeholder="—"></div>
+</div><h2 style="font-size:13px;margin:20px 0 12px">Самочувствие и цикл</h2>
+<div class="field-grid">
+<div class="field"><label>Фаза цикла</label><select id="checkPhase"><option value="">Не знаю / не отслеживаю</option><option>Менструация</option><option>Фолликулярная</option><option>Овуляция</option><option>Лютеиновая</option></select></div>
+<div class="field"><label>Энергия (1–5)</label><select id="energy"><option value="">Выбрать</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<div class="field full"><label>Заметки: сон, отёчность, настроение, ощущения</label><input id="checkNotes" placeholder="Например: больше отёчности перед менструацией"></div>
+</div><div class="row" style="margin-top:18px"><button class="primary" id="saveCheckin">Сохранить замер</button><button class="secondary" onclick="showPage('progress')">К прогрессу</button></div>
+</div></section>
+
+<section class="page" id="profile">
+<div class="grid">
+<div class="card span-7"><div class="card-head"><div><h2>Your starting point</h2><div class="sub">Заполни один раз — расчёты обновятся автоматически</div></div></div>
+<div class="field-grid">
+<div class="field"><label>Возраст, лет</label><input id="age" type="number" min="18" max="100" placeholder="Например, 21"></div>
+<div class="field"><label>Рост, см</label><input id="height" type="number" min="120" max="220" placeholder="Например, 166"></div>
+<div class="field"><label>Текущий вес, кг</label><input id="weight" type="number" step=".1" placeholder="Например, 80"></div>
+<div class="field"><label>Желаемый ориентир веса, кг</label><input id="targetWeight" type="number" step=".1" placeholder="Необязательно"></div>
+<div class="field"><label>Активность вне тренировок</label><select id="activity"><option value="1.2">В основном сижу</option><option value="1.3" selected>Низкая, немного движения</option><option value="1.4">Лёгкая активность</option><option value="1.5">Умеренная активность</option></select></div>
+<div class="field"><label>Цель дефицита</label><select id="deficit"><option value="250">Мягкий · 250 ккал</option><option value="350" selected>Умеренный · 350 ккал</option><option value="450">Выраженный · 450 ккал</option></select></div>
+<div class="field"><label>Первый день последней менструации</label><input id="periodStart" type="date"></div>
+<div class="field"><label>Средняя длина цикла, дней</label><input id="cycleLength" type="number" min="21" max="40" value="28"></div>
+<div class="field full"><label>Длительность менструации, дней</label><input id="periodLength" type="number" min="2" max="10" value="5"></div>
+</div><div class="row" style="margin-top:17px"><button class="primary" id="saveProfile">Сохранить профиль и рассчитать нормы</button></div></div>
+<div class="card span-5"><div class="card-head"><div><h2>Your daily targets</h2><div class="sub">Автоматический расчёт</div></div><span>✦</span></div><div class="stat-row"><div class="stat"><b id="targetCalories">—</b><span>ккал / день</span></div><div class="stat"><b id="targetProtein">—</b><span>белки, г</span></div><div class="stat"><b id="targetWater">—</b><span>вода, мл</span></div></div><div style="margin-top:14px" class="notice" id="macroExplain">Заполни рост, возраст и вес, чтобы рассчитать ориентиры.</div></div>
+<div class="card span-12"><h2 style="margin-bottom:10px">About your data</h2><div class="notice">Данные сохраняются в памяти этого браузера на этом устройстве. Не очищай данные сайта, если хочешь сохранить историю. Приложение не подключается напрямую к Apple Health / Apple Watch: шаги и активные калории вносятся вручную. Цикл прогнозируется приблизительно и не является медицинским или контрацептивным инструментом.</div><div class="row" style="margin-top:14px"><button class="secondary" id="exportData">Экспортировать мои данные</button><button class="secondary danger" id="resetData">Сбросить все данные</button></div></div>
+</div></section>
+
+<section class="page" id="massage">
+<div class="card"><div class="card-head"><div><h2>Gentle body care</h2><div class="sub">Схема направлений для мягкого самомассажа</div></div><span>🌿</span></div>
+<div class="notice" style="margin-bottom:14px">Это упрощённая схема поверхностных направлений для лёгких поглаживаний, а не медицинская инструкция по лимфодренажу. Давление должно быть очень мягким, без боли и синяков. Массаж не «подтягивает» кожу и не удаляет жир, но может быть приятной частью ухода.</div>
+<svg class="massage-svg" viewBox="0 0 560 340" role="img" aria-label="Схема мягких направлений самомассажа">
+<defs><marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="none" stroke="#78916a" stroke-width="1.3"/></marker></defs>
+<g fill="#e8dfcc" stroke="#b7b49f" stroke-width="1.5">
+<circle cx="280" cy="42" r="23"/><path d="M258 68 Q230 78 225 116 L205 191 Q202 207 215 211 Q227 214 232 197 L251 137 L251 215 L231 300 Q228 316 243 318 Q254 319 260 302 L280 229 L300 302 Q306 319 317 318 Q332 316 329 300 L309 215 L309 137 L328 197 Q333 214 345 211 Q358 207 355 191 L335 116 Q330 78 302 68 Z"/>
+</g>
+<g fill="none" stroke="#78916a" stroke-width="2.3" marker-end="url(#arr)" stroke-linecap="round">
+<path d="M280 145 Q250 128 230 110"/><path d="M280 145 Q310 128 330 110"/>
+<path d="M280 160 Q250 185 230 190"/><path d="M280 160 Q310 185 330 190"/>
+<path d="M250 220 Q235 240 225 258"/><path d="M310 220 Q325 240 335 258"/>
+<path d="M252 95 Q240 83 240 73"/><path d="M308 95 Q320 83 320 73"/>
+</g>
+<g><text x="18" y="105">Шея и ключицы</text><text x="18" y="120">очень мягко</text><text x="390" y="145">Живот</text><text x="390" y="160">без давления,</text><text x="390" y="175">по комфорту</text><text x="18" y="252">Ноги</text><text x="18" y="267">лёгкие движения</text><text x="390" y="265">Руки</text><text x="390" y="280">к подмышечной</text><text x="390" y="295">области</text></g>
+</svg>
+<div class="row" style="margin-top:14px"><button class="primary" onclick="markMassage()">Отметить уход за сегодня</button><span class="sub">Засчитается привычка «Body massage»</span></div>
+<div class="notice" style="margin-top:14px">Не делай массаж при болезненности, воспалении, повреждении кожи, необъяснимом отёке или подозрении на тромбоз. При заболеваниях лимфатической/сосудистой системы сначала обсуди технику со специалистом. Для сухой щётки используй только лёгкое давление, не по раздражённой коже.</div>
+</div></section>
+</div>
+<nav class="nav">
+<button class="active" data-page="today"><i>⌂</i>Сегодня</button><button data-page="progress"><i>◷</i>Прогресс</button><button data-page="checkin"><i>＋</i>Замер</button><button data-page="massage"><i>❀</i>Массаж</button><button data-page="profile"><i>⚙</i>Профиль</button>
+</nav><div class="toast" id="toast">Сохранено</div>
+<script>
+const KEY='winterArc56_v1';
+const startDefault='2026-10-31';
+let db=JSON.parse(localStorage.getItem(KEY)||'null')||{start:startDefault,profile:{},days:{},checkins:[]};
+const $=id=>document.getElementById(id);
+const iso=d=>{let x=new Date(d);return [x.getFullYear(),String(x.getMonth()+1).padStart(2,'0'),String(x.getDate()).padStart(2,'0')].join('-')};
+const today=iso(new Date());
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function dayNum(date=today){let a=new Date(db.start+'T12:00:00'),b=new Date(date+'T12:00:00');return Math.max(1,Math.min(56,Math.floor((b-a)/86400000)+1))}
+function dayData(date=today){if(!db.days[date])db.days[date]={water:0,habits:{},kcal:'',protein:'',fat:'',carbs:'',steps:'',activeKcal:'',moveMinutes:''};return db.days[date]}
+function toast(t='Сохранено'){let el=$('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1500)}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='progress')renderProgress();if(id==='profile')loadProfile()}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function calc(){
+ const p=db.profile||{},w=Number(p.weight),h=Number(p.height),age=Number(p.age);
+ if(!(w>0&&h>0&&age>0))return null;
+ const bmr=10*w+6.25*h-5*age-161, tdee=bmr*(Number(p.activity)||1.3);
+ const deficit=Number(p.deficit)||350,cal=Math.max(1400,Math.round((tdee-deficit)/50)*50);
+ const goalW=Number(p.targetWeight)||Math.max(55,w*.85),protein=Math.round(goalW*1.7),fat=Math.round(goalW*.8),carbs=Math.max(0,Math.round((cal-protein*4-fat*9)/4));
+ return {bmr:Math.round(bmr),tdee:Math.round(tdee),cal,protein,fat,carbs,water:Math.round(w*30/100)*100};
+}
+function renderTargets(){let c=calc();$('targetCalories').textContent=c?c.cal:'—';$('targetProtein').textContent=c?c.protein:'—';$('targetWater').textContent=c?c.water:'—';$('calorieTarget').textContent=c?'Цель '+c.cal+' ккал':'Заполни профиль';$('kcalGoal').textContent='из '+(c?c.cal:'—')+' ккал';$('proteinGoal').textContent='цель '+(c?c.protein:'—')+' г';$('fatGoal').textContent='цель '+(c?c.fat:'—')+' г';$('carbsGoal').textContent='цель '+(c?c.carbs:'—')+' г';$('waterGoal').textContent=c?c.water:2400;$('macroExplain').textContent=c?`BMR ≈ ${c.bmr} ккал · поддержание ≈ ${c.tdee} ккал. Дефицит выбран ${db.profile.deficit||350} ккал. Белок и жиры рассчитаны от ориентирного веса, углеводы — остатком калорий.`:'Заполни рост, возраст и вес, чтобы рассчитать ориентиры.'}
+function renderDay(){
+ let d=dayData(),n=dayNum(),c=calc();$('datePill').textContent=`DAY ${String(n).padStart(2,'0')} / 56`;
+ ['kcal','protein','fat','carbs','steps','activeKcal','moveMinutes'].forEach(k=>$(k).value=d[k]??'');
+ document.querySelectorAll('[data-habit]').forEach(el=>el.checked=!!d.habits[el.dataset.habit]);
+ $('waterNow').textContent=d.water;$('waterGlasses').innerHTML='';for(let i=0;i<Math.min(12,Math.ceil((c?.water||2400)/250));i++){let g=document.createElement('span');g.className='glass'+(d.water>i*250?' full':'');$('waterGlasses').append(g)}
+ $('dayPercent').textContent=Math.round(Object.values(d.habits).filter(Boolean).length/6*100)+'%';$('dayProgress').style.width=$('dayPercent').textContent;
+ $('habitCount').textContent=Object.values(d.habits).filter(Boolean).length+' / 6';
+ $('streakText').textContent=Object.values(d.habits).filter(Boolean).length===6?'Все привычки на сегодня выполнены ✨':'Каждый маленький шаг имеет значение';
+ $('cycleSummary').textContent=cycleInfo()||'Добавь дату начала последней менструации в профиле — здесь появится ориентировочная фаза цикла.';
+ $('datePill').title=today;
+}
+function persistDay(){let d=dayData();['kcal','protein','fat','carbs','steps','activeKcal','moveMinutes'].forEach(k=>d[k]=$(k).value);save();renderDay()}
+['kcal','protein','fat','carbs','steps','activeKcal','moveMinutes'].forEach(k=>$(k).addEventListener('change',persistDay));
+document.querySelectorAll('[data-habit]').forEach(el=>el.onchange=()=>{dayData().habits[el.dataset.habit]=el.checked;save();renderDay()});
+$('waterPlus').onclick=()=>{dayData().water+=250;save();renderDay()};$('waterMinus').onclick=()=>{dayData().water=Math.max(0,dayData().water-250);save();renderDay()};
+function markMassage(){dayData().habits.massage=true;save();renderDay();toast('Массаж отмечен')}
+function loadProfile(){let p=db.profile||{};['age','height','weight','targetWeight','activity','deficit','periodStart','cycleLength','periodLength'].forEach(k=>{if(p[k]!==undefined)$(k).value=p[k]})}
+$('saveProfile').onclick=()=>{let p={};['age','height','weight','targetWeight','activity','deficit','periodStart','cycleLength','periodLength'].forEach(k=>p[k]=$(k).value);db.profile=p;save();renderTargets();renderDay();toast('Профиль сохранён · нормы рассчитаны')};
+function cycleInfo(){let p=db.profile||{};if(!p.periodStart)return '';let len=Number(p.cycleLength)||28,period=Number(p.periodLength)||5;let diff=Math.floor((new Date(today+'T12:00:00')-new Date(p.periodStart+'T12:00:00'))/86400000);if(diff<0)return 'Дата последней менструации в будущем — проверь профиль.';let day=diff%len+1,phase=day<=period?'Менструальная':day< Math.round(len*.45)?'Фолликулярная':day<=Math.round(len*.58)?'Овуляторное окно':'Лютеиновая';return `Ориентировочно: ${phase.toLowerCase()} фаза · день ${day} цикла. Прогноз рассчитан по средней длине цикла и может смещаться. Используй его как подсказку, а не точное определение овуляции.`}
+$('checkDate').value=today;
+$('saveCheckin').onclick=()=>{let obj={date:$('checkDate').value||today};['checkWeight','bust','waist','abdomen','hips','thigh','arm','checkPhase','energy','checkNotes'].forEach(k=>obj[k]=$(k).value);obj.weight=obj.checkWeight;delete obj.checkWeight;db.checkins=db.checkins.filter(x=>x.date!==obj.date);db.checkins.push(obj);db.checkins.sort((a,b)=>a.date.localeCompare(b.date));if(obj.weight)db.profile.weight=obj.weight;save();renderTargets();toast('Еженедельный замер сохранён');showPage('progress')};
+function renderProgress(){
+ let n=dayNum();$('progressDay').textContent=String(n).padStart(2,'0');$('overallProgress').style.width=(n/56*100)+'%';$('overallCaption').textContent=Math.round(n/56*100)+'% пути пройдено';
+ let bars='';for(let w=0;w<8;w++){let dates=Object.keys(db.days).filter(d=>dayNum(d)>=w*7+1&&dayNum(d)<=w*7+7),vals=dates.map(d=>Object.values(db.days[d].habits||{}).filter(Boolean).length/6),v=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*100):0;bars+=`<div class="week-bar"><div style="height:${Math.max(4,v)}%"></div><small>W${w+1}<br>${v}%</small></div>`}$('weekBars').innerHTML=bars;
+ let last=db.checkins[db.checkins.length-1]||{};$('waistStat').textContent=last.waist||'—';$('hipStat').textContent=last.hips||'—';$('weightStat').textContent=last.weight||db.profile.weight||'—';
+ if(!db.checkins.length){$('historyWrap').textContent='Пока нет замеров. Первый чек-ин можно сделать сегодня.';return}
+ $('historyWrap').innerHTML='<table class="table"><thead><tr><th>Дата</th><th>Вес</th><th>Талия</th><th>Живот</th><th>Бёдра</th><th>Цикл</th></tr></thead><tbody>'+db.checkins.slice().reverse().map(x=>`<tr><td>${x.date}</td><td>${x.weight||'—'}</td><td>${x.waist||'—'}</td><td>${x.abdomen||'—'}</td><td>${x.hips||'—'}</td><td>${x.checkPhase||'—'}</td></tr>`).join('')+'</tbody></table>';
+}
+$('exportData').onclick=()=>{let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='winter-arc-my-data.json';a.click();URL.revokeObjectURL(a.href)};
+$('resetData').onclick=()=>{if(confirm('Удалить весь профиль, привычки и историю? Сначала экспортируй данные, если они нужны.')){localStorage.removeItem(KEY);db={start:startDefault,profile:{},days:{},checkins:[]};renderTargets();renderDay();loadProfile();renderProgress();toast('Данные сброшены')}};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+renderTargets();renderDay();renderProgress();
+</script>
+</body></html>
